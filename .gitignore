@@ -1,0 +1,11 @@
+# .env
+# .env.*
+*.log
+logs/
+tmp/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.venv
+segments/

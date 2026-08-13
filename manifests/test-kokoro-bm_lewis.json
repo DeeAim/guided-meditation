@@ -1,0 +1,323 @@
+{
+  "script": "scripts/test.md",
+  "backend": "kokoro",
+  "voice": "bm_lewis",
+  "speed": 0.9,
+  "sample_rate": 24000,
+  "output": "output/test-bm_lewis.wav",
+  "duration_seconds": 160.7,
+  "items": [
+    {
+      "index": 1,
+      "kind": "speech",
+      "path": "segments/001_speech.wav",
+      "duration_seconds": 3.275,
+      "text": "Allow your eyes to gently close.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 2,
+      "kind": "silence",
+      "path": "segments/002_pause_4s.wav",
+      "duration_seconds": 4.0,
+      "text": null,
+      "requested_pause_seconds": 4.0
+    },
+    {
+      "index": 3,
+      "kind": "speech",
+      "path": "segments/003_speech.wav",
+      "duration_seconds": 3.3,
+      "text": "Take a slow, comfortable breath in.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 4,
+      "kind": "silence",
+      "path": "segments/004_pause_3s.wav",
+      "duration_seconds": 3.0,
+      "text": null,
+      "requested_pause_seconds": 3.0
+    },
+    {
+      "index": 5,
+      "kind": "speech",
+      "path": "segments/005_speech.wav",
+      "duration_seconds": 3.175,
+      "text": "And release the breath without effort.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 6,
+      "kind": "silence",
+      "path": "segments/006_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0
+    },
+    {
+      "index": 7,
+      "kind": "speech",
+      "path": "segments/007_speech.wav",
+      "duration_seconds": 4.425,
+      "text": "For the next few moments, there is nowhere else you need to be.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 8,
+      "kind": "silence",
+      "path": "segments/008_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0
+    },
+    {
+      "index": 9,
+      "kind": "speech",
+      "path": "segments/009_speech.wav",
+      "duration_seconds": 5.15,
+      "text": "Simply notice the feeling of your body being supported beneath you.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 10,
+      "kind": "silence",
+      "path": "segments/010_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0
+    },
+    {
+      "index": 11,
+      "kind": "speech",
+      "path": "segments/011_speech.wav",
+      "duration_seconds": 4.125,
+      "text": "Feel the weight of your body settling naturally.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 12,
+      "kind": "speech",
+      "path": "segments/012_speech.wav",
+      "duration_seconds": 3.6,
+      "text": "There is nothing you need to hold up right now.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 13,
+      "kind": "silence",
+      "path": "segments/013_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0
+    },
+    {
+      "index": 14,
+      "kind": "speech",
+      "path": "segments/014_speech.wav",
+      "duration_seconds": 4.175,
+      "text": "Bring your attention gently back to your breathing.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 15,
+      "kind": "speech",
+      "path": "segments/015_speech.wav",
+      "duration_seconds": 3.05,
+      "text": "You don't need to change its rhythm.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 16,
+      "kind": "speech",
+      "path": "segments/016_speech.wav",
+      "duration_seconds": 3.275,
+      "text": "Just notice the breath arriving...",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 17,
+      "kind": "speech",
+      "path": "segments/017_speech.wav",
+      "duration_seconds": 2.2,
+      "text": "and the breath leaving.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 18,
+      "kind": "silence",
+      "path": "segments/018_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0
+    },
+    {
+      "index": 19,
+      "kind": "speech",
+      "path": "segments/019_speech.wav",
+      "duration_seconds": 4.15,
+      "text": "As you breathe out, allow your shoulders to soften.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 20,
+      "kind": "speech",
+      "path": "segments/020_speech.wav",
+      "duration_seconds": 2.525,
+      "text": "Let your jaw relax.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 21,
+      "kind": "speech",
+      "path": "segments/021_speech.wav",
+      "duration_seconds": 3.725,
+      "text": "And allow your hands to rest comfortably.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 22,
+      "kind": "silence",
+      "path": "segments/022_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0
+    },
+    {
+      "index": 23,
+      "kind": "speech",
+      "path": "segments/023_speech.wav",
+      "duration_seconds": 3.1,
+      "text": "Notice any sounds around you.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 24,
+      "kind": "speech",
+      "path": "segments/024_speech.wav",
+      "duration_seconds": 3.075,
+      "text": "There is no need to focus on them.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 25,
+      "kind": "speech",
+      "path": "segments/025_speech.wav",
+      "duration_seconds": 2.8,
+      "text": "Simply let them come and go.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 26,
+      "kind": "silence",
+      "path": "segments/026_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0
+    },
+    {
+      "index": 27,
+      "kind": "speech",
+      "path": "segments/027_speech.wav",
+      "duration_seconds": 3.9,
+      "text": "And if thoughts begin to appear, that's okay.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 28,
+      "kind": "speech",
+      "path": "segments/028_speech.wav",
+      "duration_seconds": 2.625,
+      "text": "You don't need to follow them.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 29,
+      "kind": "speech",
+      "path": "segments/029_speech.wav",
+      "duration_seconds": 4.75,
+      "text": "Gently return your attention to the feeling of your body...",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 30,
+      "kind": "speech",
+      "path": "segments/030_speech.wav",
+      "duration_seconds": 3.375,
+      "text": "and to the quiet rhythm of your breath.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 31,
+      "kind": "silence",
+      "path": "segments/031_pause_7s.wav",
+      "duration_seconds": 7.0,
+      "text": null,
+      "requested_pause_seconds": 7.0
+    },
+    {
+      "index": 32,
+      "kind": "speech",
+      "path": "segments/032_speech.wav",
+      "duration_seconds": 3.7,
+      "text": "Take one more slow, comfortable breath in.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 33,
+      "kind": "silence",
+      "path": "segments/033_pause_3s.wav",
+      "duration_seconds": 3.0,
+      "text": null,
+      "requested_pause_seconds": 3.0
+    },
+    {
+      "index": 34,
+      "kind": "speech",
+      "path": "segments/034_speech.wav",
+      "duration_seconds": 2.6,
+      "text": "And gently breathe out.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 35,
+      "kind": "silence",
+      "path": "segments/035_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0
+    },
+    {
+      "index": 36,
+      "kind": "speech",
+      "path": "segments/036_speech.wav",
+      "duration_seconds": 5.05,
+      "text": "As you begin this morning, carry this sense of steadiness with you.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 37,
+      "kind": "speech",
+      "path": "segments/037_speech.wav",
+      "duration_seconds": 4.825,
+      "text": "You can return to your breath whenever you need a moment of calm.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 38,
+      "kind": "silence",
+      "path": "segments/038_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0
+    },
+    {
+      "index": 39,
+      "kind": "speech",
+      "path": "segments/039_speech.wav",
+      "duration_seconds": 3.75,
+      "text": "And when you're ready, gently open your eyes.",
+      "requested_pause_seconds": null
+    }
+  ]
+}
