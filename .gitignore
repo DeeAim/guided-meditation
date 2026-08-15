@@ -7,5 +7,7 @@ node_modules/
 __pycache__/
 *.pyc
 .DS_Store
-.venv
+
+.venv/
+.venv-chatterbox/
 segments/

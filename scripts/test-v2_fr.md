@@ -1,0 +1,11 @@
+# Ancrage du matin
+
+Laissez doucement vos yeux se fermer, si cela vous semble confortable. Prenez une inspiration lente et naturelle, puis laissez l’air s’échapper sans effort. Sentez le poids de votre corps se déposer naturellement sur la surface qui vous soutient. Vous n’avez rien à soutenir en ce moment, et vous n’avez besoin d’être nulle part ailleurs. Laissez vos épaules se relâcher. Détendez votre mâchoire et laissez vos mains reposer confortablement. Pendant quelques instants, remarquez simplement le rythme paisible de votre respiration. Vous n’avez pas besoin de respirer plus profondément ni plus lentement. Remarquez simplement le souffle qui entre, puis le souffle qui ressort, un cycle doux après l’autre.
+
+[pause 7s]
+
+Portez maintenant un peu plus d’attention aux endroits où votre corps est soutenu. Remarquez ce contact stable sous vous et permettez-vous de recevoir ce soutien. À l’expiration, imaginez que vous relâchez tout effort inutile au niveau du visage, du cou, des épaules et des mains. Des sons peuvent apparaître et disparaître autour de vous. Vous n’avez pas besoin de les repousser, ni de les suivre. Laissez chaque son faire simplement partie de l’arrière-plan. Si des pensées apparaissent, remarquez simplement qu’elles sont là, puis ramenez doucement votre attention vers la sensation physique toute simple de votre corps au repos et vers le mouvement naturel de votre respiration.
+
+[pause 8s]
+
+Prenez encore une inspiration lente et confortable, en laissant l’air entrer à son propre rythme. Puis laissez le souffle ressortir doucement, sans forcer. Remarquez s’il existe maintenant, dans votre corps, ne serait-ce qu’une légère sensation d’espace, de stabilité ou d’apaisement. Vous n’avez pas besoin de vous accrocher à cette sensation. Reconnaissez simplement que vous pouvez revenir à votre respiration, aux sensations dans vos pieds ou vos mains, ou au soutien sous votre corps chaque fois que vous avez besoin d’un moment de calme. Alors que vous commencez cette matinée, emportez avec vous cette tranquillité et cette stabilité. Et lorsque vous êtes prêt, ouvrez doucement les yeux et reprenez contact avec la pièce autour de vous.

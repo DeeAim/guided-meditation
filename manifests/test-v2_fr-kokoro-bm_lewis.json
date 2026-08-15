@@ -1,0 +1,51 @@
+{
+  "script": "scripts/test-v2_fr.md",
+  "backend": "kokoro",
+  "voice": "bm_lewis",
+  "speed": 0.9,
+  "sample_rate": 24000,
+  "output": "output/test-v2_fr-bm_lewis.wav",
+  "duration_seconds": 169.525,
+  "items": [
+    {
+      "index": 1,
+      "kind": "speech",
+      "path": "segments/001_speech.wav",
+      "duration_seconds": 51.6,
+      "text": "Laissez doucement vos yeux se fermer, si cela vous semble confortable. Prenez une inspiration lente et naturelle, puis laissez l’air s’échapper sans effort. Sentez le poids de votre corps se déposer naturellement sur la surface qui vous soutient. Vous n’avez rien à soutenir en ce moment, et vous n’avez besoin d’être nulle part ailleurs. Laissez vos épaules se relâcher. Détendez votre mâchoire et laissez vos mains reposer confortablement. Pendant quelques instants, remarquez simplement le rythme paisible de votre respiration. Vous n’avez pas besoin de respirer plus profondément ni plus lentement. Remarquez simplement le souffle qui entre, puis le souffle qui ressort, un cycle doux après l’autre.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 2,
+      "kind": "silence",
+      "path": "segments/002_pause_7s.wav",
+      "duration_seconds": 7.0,
+      "text": null,
+      "requested_pause_seconds": 7.0
+    },
+    {
+      "index": 3,
+      "kind": "speech",
+      "path": "segments/003_speech.wav",
+      "duration_seconds": 48.3,
+      "text": "Portez maintenant un peu plus d’attention aux endroits où votre corps est soutenu. Remarquez ce contact stable sous vous et permettez-vous de recevoir ce soutien. À l’expiration, imaginez que vous relâchez tout effort inutile au niveau du visage, du cou, des épaules et des mains. Des sons peuvent apparaître et disparaître autour de vous. Vous n’avez pas besoin de les repousser, ni de les suivre. Laissez chaque son faire simplement partie de l’arrière-plan. Si des pensées apparaissent, remarquez simplement qu’elles sont là, puis ramenez doucement votre attention vers la sensation physique toute simple de votre corps au repos et vers le mouvement naturel de votre respiration.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 4,
+      "kind": "silence",
+      "path": "segments/004_pause_8s.wav",
+      "duration_seconds": 8.0,
+      "text": null,
+      "requested_pause_seconds": 8.0
+    },
+    {
+      "index": 5,
+      "kind": "speech",
+      "path": "segments/005_speech.wav",
+      "duration_seconds": 54.625,
+      "text": "Prenez encore une inspiration lente et confortable, en laissant l’air entrer à son propre rythme. Puis laissez le souffle ressortir doucement, sans forcer. Remarquez s’il existe maintenant, dans votre corps, ne serait-ce qu’une légère sensation d’espace, de stabilité ou d’apaisement. Vous n’avez pas besoin de vous accrocher à cette sensation. Reconnaissez simplement que vous pouvez revenir à votre respiration, aux sensations dans vos pieds ou vos mains, ou au soutien sous votre corps chaque fois que vous avez besoin d’un moment de calme. Alors que vous commencez cette matinée, emportez avec vous cette tranquillité et cette stabilité. Et lorsque vous êtes prêt, ouvrez doucement les yeux et reprenez contact avec la pièce autour de vous.",
+      "requested_pause_seconds": null
+    }
+  ]
+}

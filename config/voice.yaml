@@ -1,0 +1,107 @@
+version: 2
+
+paths:
+  segments: segments
+  manifests: manifests
+  output: output
+
+defaults:
+  preset: meditation-warm
+  script_profile: auto
+  normalization: voiceover
+  keep_raw_master: false
+
+script_profiles:
+  prose:
+    target_tokens: 150
+    max_tokens: 200
+
+  pause-heavy:
+    kokoro_context:
+      enabled: true
+      min_tokens: 100
+      target_tokens: 150
+      max_tokens: 200
+      short_segment_threshold: 100
+      crop_pad_ms: 60
+
+normalization:
+  voiceover:
+    enabled: true
+    target_lufs: -19.0
+    true_peak_db: -1.5
+    lra: 11.0
+
+  none:
+    enabled: false
+
+backends:
+  kokoro:
+    repo_id: hexgrad/Kokoro-82M
+    lang_code: auto
+    device: auto
+
+  chatterbox-nano:
+    device: cpu
+    reference_audio: null
+    generation:
+      temperature: 0.78
+      top_p: 0.95
+      top_k: 1000
+      min_p: 0.0
+      repetition_penalty: 1.2
+
+  chatterbox-turbo:
+    device: auto
+    reference_audio: null
+    generation:
+      temperature: 0.78
+      top_p: 0.95
+      top_k: 1000
+      min_p: 0.0
+      repetition_penalty: 1.2
+
+presets:
+  meditation-warm:
+    backend: kokoro
+    voice: af_nicole
+    speed: 0.90
+    script_profile: auto
+    normalization: voiceover
+
+  meditation-warm-british:
+    backend: kokoro
+    voice: bf_isabella
+    speed: 0.90
+    script_profile: auto
+    normalization: voiceover
+
+  meditation-deep:
+    backend: kokoro
+    voice: am_onyx
+    speed: 0.90
+    script_profile: auto
+    normalization: voiceover
+
+  meditation-bella:
+    backend: kokoro
+    voice: af_bella
+    speed: 0.90
+    script_profile: auto
+    normalization: voiceover
+
+  chatterbox-nano-meditation:
+    backend: chatterbox-nano
+    voice: default
+    speed: 0.92
+    script_profile: auto
+    normalization: voiceover
+    reference_audio: null
+
+  chatterbox-turbo-meditation:
+    backend: chatterbox-turbo
+    voice: default
+    speed: 0.92
+    script_profile: auto
+    normalization: voiceover
+    reference_audio: null

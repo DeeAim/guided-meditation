@@ -1,0 +1,1 @@
+Put optional Chatterbox reference WAV files here. Use only voice recordings you have permission to clone. Chatterbox's current code requires a reference clip longer than 5 seconds when a reference is supplied.

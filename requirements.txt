@@ -1,4 +1,2 @@
-# Kokoro's current package supports Python >=3.10,<3.14.
-kokoro>=0.9.4,<1.0
 soundfile>=0.12
-numpy>=1.26
+PyYAML>=6.0

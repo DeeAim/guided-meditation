@@ -1,0 +1,323 @@
+{
+  "script": "scripts/test_fr.md",
+  "backend": "kokoro",
+  "voice": "ff_siwis",
+  "speed": 0.9,
+  "sample_rate": 24000,
+  "output": "output/test_fr-ff_siwis.wav",
+  "duration_seconds": 160.525,
+  "items": [
+    {
+      "index": 1,
+      "kind": "speech",
+      "path": "segments/001_speech.wav",
+      "duration_seconds": 2.775,
+      "text": "Laissez doucement vos yeux se fermer.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 2,
+      "kind": "silence",
+      "path": "segments/002_pause_4s.wav",
+      "duration_seconds": 4.0,
+      "text": null,
+      "requested_pause_seconds": 4.0
+    },
+    {
+      "index": 3,
+      "kind": "speech",
+      "path": "segments/003_speech.wav",
+      "duration_seconds": 3.475,
+      "text": "Prenez une inspiration lente et confortable.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 4,
+      "kind": "silence",
+      "path": "segments/004_pause_3s.wav",
+      "duration_seconds": 3.0,
+      "text": null,
+      "requested_pause_seconds": 3.0
+    },
+    {
+      "index": 5,
+      "kind": "speech",
+      "path": "segments/005_speech.wav",
+      "duration_seconds": 2.8,
+      "text": "Puis laissez l’air s’échapper sans effort.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 6,
+      "kind": "silence",
+      "path": "segments/006_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0
+    },
+    {
+      "index": 7,
+      "kind": "speech",
+      "path": "segments/007_speech.wav",
+      "duration_seconds": 4.675,
+      "text": "Pendant les prochains instants, vous n’avez besoin d’être nulle part ailleurs.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 8,
+      "kind": "silence",
+      "path": "segments/008_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0
+    },
+    {
+      "index": 9,
+      "kind": "speech",
+      "path": "segments/009_speech.wav",
+      "duration_seconds": 5.5,
+      "text": "Remarquez simplement la sensation de votre corps soutenu par la surface sous vous.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 10,
+      "kind": "silence",
+      "path": "segments/010_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0
+    },
+    {
+      "index": 11,
+      "kind": "speech",
+      "path": "segments/011_speech.wav",
+      "duration_seconds": 3.975,
+      "text": "Sentez le poids de votre corps se déposer naturellement.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 12,
+      "kind": "speech",
+      "path": "segments/012_speech.wav",
+      "duration_seconds": 2.85,
+      "text": "Vous n’avez rien à soutenir en ce moment.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 13,
+      "kind": "silence",
+      "path": "segments/013_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0
+    },
+    {
+      "index": 14,
+      "kind": "speech",
+      "path": "segments/014_speech.wav",
+      "duration_seconds": 3.95,
+      "text": "Ramenez doucement votre attention vers votre respiration.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 15,
+      "kind": "speech",
+      "path": "segments/015_speech.wav",
+      "duration_seconds": 3.275,
+      "text": "Vous n’avez pas besoin d’en modifier le rythme.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 16,
+      "kind": "speech",
+      "path": "segments/016_speech.wav",
+      "duration_seconds": 3.075,
+      "text": "Remarquez simplement le souffle qui entre...",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 17,
+      "kind": "speech",
+      "path": "segments/017_speech.wav",
+      "duration_seconds": 2.2,
+      "text": "et le souffle qui ressort.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 18,
+      "kind": "silence",
+      "path": "segments/018_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0
+    },
+    {
+      "index": 19,
+      "kind": "speech",
+      "path": "segments/019_speech.wav",
+      "duration_seconds": 3.55,
+      "text": "À l’expiration, laissez vos épaules se relâcher.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 20,
+      "kind": "speech",
+      "path": "segments/020_speech.wav",
+      "duration_seconds": 2.375,
+      "text": "Détendez votre mâchoire.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 21,
+      "kind": "speech",
+      "path": "segments/021_speech.wav",
+      "duration_seconds": 3.15,
+      "text": "Et laissez vos mains reposer confortablement.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 22,
+      "kind": "silence",
+      "path": "segments/022_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0
+    },
+    {
+      "index": 23,
+      "kind": "speech",
+      "path": "segments/023_speech.wav",
+      "duration_seconds": 2.575,
+      "text": "Remarquez les sons autour de vous.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 24,
+      "kind": "speech",
+      "path": "segments/024_speech.wav",
+      "duration_seconds": 3.4,
+      "text": "Vous n’avez pas besoin de vous concentrer sur eux.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 25,
+      "kind": "speech",
+      "path": "segments/025_speech.wav",
+      "duration_seconds": 3.2,
+      "text": "Laissez-les simplement venir et repartir.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 26,
+      "kind": "silence",
+      "path": "segments/026_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0
+    },
+    {
+      "index": 27,
+      "kind": "speech",
+      "path": "segments/027_speech.wav",
+      "duration_seconds": 4.525,
+      "text": "Et si des pensées commencent à apparaître, c’est tout à fait normal.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 28,
+      "kind": "speech",
+      "path": "segments/028_speech.wav",
+      "duration_seconds": 2.65,
+      "text": "Vous n’avez pas besoin de les suivre.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 29,
+      "kind": "speech",
+      "path": "segments/029_speech.wav",
+      "duration_seconds": 4.6,
+      "text": "Ramenez doucement votre attention vers les sensations de votre corps...",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 30,
+      "kind": "speech",
+      "path": "segments/030_speech.wav",
+      "duration_seconds": 3.625,
+      "text": "et vers le rythme paisible de votre respiration.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 31,
+      "kind": "silence",
+      "path": "segments/031_pause_7s.wav",
+      "duration_seconds": 7.0,
+      "text": null,
+      "requested_pause_seconds": 7.0
+    },
+    {
+      "index": 32,
+      "kind": "speech",
+      "path": "segments/032_speech.wav",
+      "duration_seconds": 3.85,
+      "text": "Prenez encore une inspiration lente et confortable.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 33,
+      "kind": "silence",
+      "path": "segments/033_pause_3s.wav",
+      "duration_seconds": 3.0,
+      "text": null,
+      "requested_pause_seconds": 3.0
+    },
+    {
+      "index": 34,
+      "kind": "speech",
+      "path": "segments/034_speech.wav",
+      "duration_seconds": 2.075,
+      "text": "Puis expirez doucement.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 35,
+      "kind": "silence",
+      "path": "segments/035_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0
+    },
+    {
+      "index": 36,
+      "kind": "speech",
+      "path": "segments/036_speech.wav",
+      "duration_seconds": 5.775,
+      "text": "Alors que vous commencez cette matinée, emportez avec vous cette sensation de stabilité.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 37,
+      "kind": "speech",
+      "path": "segments/037_speech.wav",
+      "duration_seconds": 6.25,
+      "text": "Vous pouvez revenir à votre respiration chaque fois que vous avez besoin d’un moment de calme.",
+      "requested_pause_seconds": null
+    },
+    {
+      "index": 38,
+      "kind": "silence",
+      "path": "segments/038_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0
+    },
+    {
+      "index": 39,
+      "kind": "speech",
+      "path": "segments/039_speech.wav",
+      "duration_seconds": 3.375,
+      "text": "Et lorsque vous êtes prêt, ouvrez doucement les yeux.",
+      "requested_pause_seconds": null
+    }
+  ]
+}
