@@ -53,7 +53,7 @@ backends:
 
   chatterbox-turbo:
     device: auto
-    reference_audio: null
+    reference_audio: references/meditation-male-clive-catterall.wav
     generation:
       temperature: 0.78
       top_p: 0.95

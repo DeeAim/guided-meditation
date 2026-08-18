@@ -1,0 +1,531 @@
+{
+  "version": 2,
+  "script": "scripts/test.md",
+  "config": "config/voice.yaml",
+  "preset": "meditation-warm",
+  "backend": "kokoro",
+  "voice": "af_nicole:0.4,af_bella:0.6",
+  "output_voice_label": "af_nicole:0.4,af_bella:0.6",
+  "reference_audio": null,
+  "speed": 0.9,
+  "script_profile": "pause-heavy",
+  "sample_rate": 24000,
+  "normalization": {
+    "name": "voiceover",
+    "enabled": true,
+    "target_lufs": -19.0,
+    "true_peak_db": -1.5,
+    "lra": 11.0
+  },
+  "output": "output/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6.wav",
+  "duration_seconds_before_final_loudnorm": 150.48266666666666,
+  "items": [
+    {
+      "index": 1,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/001_speech.wav",
+      "duration_seconds": 3.1075,
+      "text": "Allow your eyes to gently close.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 30,
+        "context_tokens": 170,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 2,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/002_pause_4s.wav",
+      "duration_seconds": 4.0,
+      "text": null,
+      "requested_pause_seconds": 4.0,
+      "metadata": null
+    },
+    {
+      "index": 3,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/003_speech.wav",
+      "duration_seconds": 3.0075,
+      "text": "Take a slow, comfortable breath in.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 36,
+        "context_tokens": 170,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 4,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/004_pause_3s.wav",
+      "duration_seconds": 3.0,
+      "text": null,
+      "requested_pause_seconds": 3.0,
+      "metadata": null
+    },
+    {
+      "index": 5,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/005_speech.wav",
+      "duration_seconds": 3.1825,
+      "text": "And release the breath without effort.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 35,
+        "context_tokens": 170,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 6,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/006_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0,
+      "metadata": null
+    },
+    {
+      "index": 7,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/007_speech.wav",
+      "duration_seconds": 4.582541666666667,
+      "text": "For the next few moments, there is nowhere else you need to be.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 66,
+        "context_tokens": 167,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 8,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/008_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0,
+      "metadata": null
+    },
+    {
+      "index": 9,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/009_speech.wav",
+      "duration_seconds": 4.545,
+      "text": "Simply notice the feeling of your body being supported beneath you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 64,
+        "context_tokens": 167,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 10,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/010_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0,
+      "metadata": null
+    },
+    {
+      "index": 11,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/011_speech.wav",
+      "duration_seconds": 3.77,
+      "text": "Feel the weight of your body settling naturally.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 45,
+        "context_tokens": 156,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 12,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/012_speech.wav",
+      "duration_seconds": 3.4075,
+      "text": "There is nothing you need to hold up right now.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 45,
+        "context_tokens": 175,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 13,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/013_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0,
+      "metadata": null
+    },
+    {
+      "index": 14,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/014_speech.wav",
+      "duration_seconds": 3.1575,
+      "text": "Bring your attention gently back to your breathing.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 47,
+        "context_tokens": 175,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 15,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/015_speech.wav",
+      "duration_seconds": 2.3325416666666667,
+      "text": "You don't need to change its rhythm.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 35,
+        "context_tokens": 162,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 16,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/016_speech.wav",
+      "duration_seconds": 2.945,
+      "text": "Just notice the breath arriving...",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 32,
+        "context_tokens": 162,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 17,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/017_speech.wav",
+      "duration_seconds": 2.0825,
+      "text": "and the breath leaving.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 20,
+        "context_tokens": 158,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 18,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/018_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0,
+      "metadata": null
+    },
+    {
+      "index": 19,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/019_speech.wav",
+      "duration_seconds": 3.8075,
+      "text": "As you breathe out, allow your shoulders to soften.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 46,
+        "context_tokens": 163,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 20,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/020_speech.wav",
+      "duration_seconds": 1.845,
+      "text": "Let your jaw relax.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 21,
+        "context_tokens": 163,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 21,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/021_speech.wav",
+      "duration_seconds": 3.145,
+      "text": "And allow your hands to rest comfortably.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 43,
+        "context_tokens": 164,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 22,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/022_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0,
+      "metadata": null
+    },
+    {
+      "index": 23,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/023_speech.wav",
+      "duration_seconds": 2.4325,
+      "text": "Notice any sounds around you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 29,
+        "context_tokens": 164,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 24,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/024_speech.wav",
+      "duration_seconds": 2.57,
+      "text": "There is no need to focus on them.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 36,
+        "context_tokens": 172,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 25,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/025_speech.wav",
+      "duration_seconds": 2.57,
+      "text": "Simply let them come and go.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 31,
+        "context_tokens": 172,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 26,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/026_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0,
+      "metadata": null
+    },
+    {
+      "index": 27,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/027_speech.wav",
+      "duration_seconds": 3.495,
+      "text": "And if thoughts begin to appear, that's okay.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 43,
+        "context_tokens": 172,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 28,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/028_speech.wav",
+      "duration_seconds": 2.145,
+      "text": "You don't need to follow them.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 29,
+        "context_tokens": 163,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 29,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/029_speech.wav",
+      "duration_seconds": 3.8575,
+      "text": "Gently return your attention to the feeling of your body...",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 57,
+        "context_tokens": 164,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 30,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/030_speech.wav",
+      "duration_seconds": 2.9075,
+      "text": "and to the quiet rhythm of your breath.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 37,
+        "context_tokens": 164,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 31,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/031_pause_7s.wav",
+      "duration_seconds": 7.0,
+      "text": null,
+      "requested_pause_seconds": 7.0,
+      "metadata": null
+    },
+    {
+      "index": 32,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/032_speech.wav",
+      "duration_seconds": 3.6325,
+      "text": "Take one more slow, comfortable breath in.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 44,
+        "context_tokens": 164,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 33,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/033_pause_3s.wav",
+      "duration_seconds": 3.0,
+      "text": null,
+      "requested_pause_seconds": 3.0,
+      "metadata": null
+    },
+    {
+      "index": 34,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/034_speech.wav",
+      "duration_seconds": 2.2575416666666666,
+      "text": "And gently breathe out.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 23,
+        "context_tokens": 152,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 35,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/035_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0,
+      "metadata": null
+    },
+    {
+      "index": 36,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/036_speech.wav",
+      "duration_seconds": 4.782541666666667,
+      "text": "As you begin this morning, carry this sense of steadiness with you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 63,
+        "context_tokens": 152,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 37,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/037_speech.wav",
+      "duration_seconds": 4.27,
+      "text": "You can return to your breath whenever you need a moment of calm.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 64,
+        "context_tokens": 152,
+        "crop_pad_ms": 60.0
+      }
+    },
+    {
+      "index": 38,
+      "kind": "silence",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/038_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0,
+      "metadata": null
+    },
+    {
+      "index": 39,
+      "kind": "speech",
+      "path": "segments/test-meditation-warm-kokoro-af_nicole-0.4-af_bella-0.6/039_speech.wav",
+      "duration_seconds": 3.645,
+      "text": "And when you're ready, gently open your eyes.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "contextual": true,
+        "direct_target_tokens": 43,
+        "context_tokens": 172,
+        "crop_pad_ms": 60.0
+      }
+    }
+  ]
+}

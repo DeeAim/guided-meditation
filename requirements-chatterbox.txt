@@ -1,2 +1,2 @@
 -r requirements.txt
-chatterbox-tts==0.1.7
+git+https://github.com/resemble-ai/chatterbox.git@master

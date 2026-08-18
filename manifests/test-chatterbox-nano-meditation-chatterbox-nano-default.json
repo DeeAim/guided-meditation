@@ -1,0 +1,711 @@
+{
+  "version": 2,
+  "script": "scripts/test.md",
+  "config": "config/voice.yaml",
+  "preset": "chatterbox-nano-meditation",
+  "backend": "chatterbox-nano",
+  "voice": "default",
+  "speed": 0.92,
+  "script_profile": "pause-heavy",
+  "sample_rate": 24000,
+  "normalization": {
+    "name": "voiceover",
+    "enabled": true,
+    "target_lufs": -19.0,
+    "true_peak_db": -1.5,
+    "lra": 11.0
+  },
+  "output": "output/test-chatterbox-nano-meditation-chatterbox-nano-default.wav",
+  "duration_seconds_before_final_loudnorm": 134.86816666666667,
+  "items": [
+    {
+      "index": 1,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/001_speech.wav",
+      "duration_seconds": 2.46075,
+      "text": "Allow your eyes to gently close.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 2,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/002_pause_4s.wav",
+      "duration_seconds": 4.0,
+      "text": null,
+      "requested_pause_seconds": 4.0,
+      "metadata": null
+    },
+    {
+      "index": 3,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/003_speech.wav",
+      "duration_seconds": 2.203625,
+      "text": "Take a slow, comfortable breath in.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 4,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/004_pause_3s.wav",
+      "duration_seconds": 3.0,
+      "text": null,
+      "requested_pause_seconds": 3.0,
+      "metadata": null
+    },
+    {
+      "index": 5,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/005_speech.wav",
+      "duration_seconds": 2.0755,
+      "text": "And release the breath without effort.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 6,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/006_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0,
+      "metadata": null
+    },
+    {
+      "index": 7,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/007_speech.wav",
+      "duration_seconds": 3.7739583333333333,
+      "text": "For the next few moments, there is nowhere else you need to be.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 8,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/008_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0,
+      "metadata": null
+    },
+    {
+      "index": 9,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/009_speech.wav",
+      "duration_seconds": 3.945,
+      "text": "Simply notice the feeling of your body being supported beneath you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 10,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/010_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0,
+      "metadata": null
+    },
+    {
+      "index": 11,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/011_speech.wav",
+      "duration_seconds": 2.98375,
+      "text": "Feel the weight of your body settling naturally.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 12,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/012_speech.wav",
+      "duration_seconds": 2.6416666666666666,
+      "text": "There is nothing you need to hold up right now.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 13,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/013_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0,
+      "metadata": null
+    },
+    {
+      "index": 14,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/014_speech.wav",
+      "duration_seconds": 2.689625,
+      "text": "Bring your attention gently back to your breathing.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 15,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/015_speech.wav",
+      "duration_seconds": 1.9411666666666667,
+      "text": "You don't need to change its rhythm.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 16,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/016_speech.wav",
+      "duration_seconds": 2.203875,
+      "text": "Just notice the breath arriving...",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 17,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/017_speech.wav",
+      "duration_seconds": 1.4310833333333333,
+      "text": "and the breath leaving.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 18,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/018_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0,
+      "metadata": null
+    },
+    {
+      "index": 19,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/019_speech.wav",
+      "duration_seconds": 3.33425,
+      "text": "As you breathe out, allow your shoulders to soften.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 20,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/020_speech.wav",
+      "duration_seconds": 1.8196666666666668,
+      "text": "Let your jaw relax.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 21,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/021_speech.wav",
+      "duration_seconds": 2.5938333333333334,
+      "text": "And allow your hands to rest comfortably.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 22,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/022_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0,
+      "metadata": null
+    },
+    {
+      "index": 23,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/023_speech.wav",
+      "duration_seconds": 2.2472916666666665,
+      "text": "Notice any sounds around you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 24,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/024_speech.wav",
+      "duration_seconds": 1.9929166666666667,
+      "text": "There is no need to focus on them.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 25,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/025_speech.wav",
+      "duration_seconds": 1.9400416666666667,
+      "text": "Simply let them come and go.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 26,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/026_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0,
+      "metadata": null
+    },
+    {
+      "index": 27,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/027_speech.wav",
+      "duration_seconds": 3.2125416666666666,
+      "text": "And if thoughts begin to appear, that's okay.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 28,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/028_speech.wav",
+      "duration_seconds": 1.7230416666666666,
+      "text": "You don't need to follow them.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 29,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/029_speech.wav",
+      "duration_seconds": 3.1239583333333334,
+      "text": "Gently return your attention to the feeling of your body...",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 30,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/030_speech.wav",
+      "duration_seconds": 2.418458333333333,
+      "text": "and to the quiet rhythm of your breath.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 31,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/031_pause_7s.wav",
+      "duration_seconds": 7.0,
+      "text": null,
+      "requested_pause_seconds": 7.0,
+      "metadata": null
+    },
+    {
+      "index": 32,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/032_speech.wav",
+      "duration_seconds": 2.696,
+      "text": "Take one more slow, comfortable breath in.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 33,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/033_pause_3s.wav",
+      "duration_seconds": 3.0,
+      "text": null,
+      "requested_pause_seconds": 3.0,
+      "metadata": null
+    },
+    {
+      "index": 34,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/034_speech.wav",
+      "duration_seconds": 1.8525416666666668,
+      "text": "And gently breathe out.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 35,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/035_pause_5s.wav",
+      "duration_seconds": 5.0,
+      "text": null,
+      "requested_pause_seconds": 5.0,
+      "metadata": null
+    },
+    {
+      "index": 36,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/036_speech.wav",
+      "duration_seconds": 3.807958333333333,
+      "text": "As you begin this morning, carry this sense of steadiness with you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 37,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/037_speech.wav",
+      "duration_seconds": 3.6381666666666668,
+      "text": "You can return to your breath whenever you need a moment of calm.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 38,
+      "kind": "silence",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/038_pause_6s.wav",
+      "duration_seconds": 6.0,
+      "text": null,
+      "requested_pause_seconds": 6.0,
+      "metadata": null
+    },
+    {
+      "index": 39,
+      "kind": "speech",
+      "path": "segments/test-chatterbox-nano-meditation-chatterbox-nano-default/039_speech.wav",
+      "duration_seconds": 3.1175,
+      "text": "And when you're ready, gently open your eyes.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-nano",
+        "reference_audio": "references/meditation-female-cori-samuel.wav",
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000,
+          "audio_prompt_path": "references/meditation-female-cori-samuel.wav"
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    }
+  ]
+}

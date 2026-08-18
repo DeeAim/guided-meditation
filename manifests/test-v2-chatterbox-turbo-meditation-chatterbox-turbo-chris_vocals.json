@@ -1,0 +1,234 @@
+{
+  "version": 2,
+  "script": "scripts/test-v2.md",
+  "config": "config/voice.yaml",
+  "preset": "chatterbox-turbo-meditation",
+  "backend": "chatterbox-turbo",
+  "voice": "default",
+  "output_voice_label": "chris_vocals",
+  "reference_audio": "references/meditation-male-chris_vocals.wav",
+  "speed": 0.92,
+  "script_profile": "prose",
+  "sample_rate": 24000,
+  "normalization": {
+    "name": "voiceover",
+    "enabled": true,
+    "target_lufs": -19.0,
+    "true_peak_db": -1.5,
+    "lra": 11.0
+  },
+  "output": "output/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals.wav",
+  "duration_seconds_before_final_loudnorm": 123.10625,
+  "items": [
+    {
+      "index": 1,
+      "kind": "speech",
+      "path": "segments/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals/001_speech.wav",
+      "duration_seconds": 16.779875,
+      "text": "Allow your eyes to gently close, if that feels comfortable. Take a slow, easy breath in, and let the breath leave without effort. Feel the weight of your body settling naturally into the surface beneath you. There is nothing you need to hold up right now, and nowhere else you need to be.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-turbo",
+        "reference_audio": "references/meditation-male-chris_vocals.wav",
+        "reference_label": "chris_vocals",
+        "text_tokens": 61,
+        "characters": 288,
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 2,
+      "kind": "speech",
+      "path": "segments/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals/002_speech.wav",
+      "duration_seconds": 17.213916666666666,
+      "text": "Let your shoulders soften. Allow your jaw to relax, and let your hands rest comfortably. For a few moments, simply notice the quiet rhythm of breathing. You do not need to make the breath deeper or slower. Just notice the breath arriving, and notice the breath leaving, one gentle cycle at a time.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-turbo",
+        "reference_audio": "references/meditation-male-chris_vocals.wav",
+        "reference_label": "chris_vocals",
+        "text_tokens": 62,
+        "characters": 297,
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 3,
+      "kind": "silence",
+      "path": "segments/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals/003_pause_7s.wav",
+      "duration_seconds": 7.0,
+      "text": null,
+      "requested_pause_seconds": 7.0,
+      "metadata": null
+    },
+    {
+      "index": 4,
+      "kind": "speech",
+      "path": "segments/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals/004_speech.wav",
+      "duration_seconds": 16.953541666666666,
+      "text": "Now bring a little more attention to the places where your body is supported. Notice the steady contact beneath you, and allow yourself to receive that support. As you breathe out, imagine releasing any unnecessary effort from the face, the neck, the shoulders, and the hands.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-turbo",
+        "reference_audio": "references/meditation-male-chris_vocals.wav",
+        "reference_label": "chris_vocals",
+        "text_tokens": 54,
+        "characters": 276,
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 5,
+      "kind": "speech",
+      "path": "segments/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals/005_speech.wav",
+      "duration_seconds": 7.953166666666666,
+      "text": "Sounds may come and go around you. There is no need to block them out, and no need to follow them. Let each sound be part of the background.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-turbo",
+        "reference_audio": "references/meditation-male-chris_vocals.wav",
+        "reference_label": "chris_vocals",
+        "text_tokens": 33,
+        "characters": 140,
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 6,
+      "kind": "speech",
+      "path": "segments/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals/006_speech.wav",
+      "duration_seconds": 10.170791666666666,
+      "text": "If thoughts appear, notice that they are here, then gently return your attention to the simple physical feeling of your body resting and to the natural movement of your breath.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-turbo",
+        "reference_audio": "references/meditation-male-chris_vocals.wav",
+        "reference_label": "chris_vocals",
+        "text_tokens": 33,
+        "characters": 176,
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 7,
+      "kind": "silence",
+      "path": "segments/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals/007_pause_8s.wav",
+      "duration_seconds": 8.0,
+      "text": null,
+      "requested_pause_seconds": 8.0,
+      "metadata": null
+    },
+    {
+      "index": 8,
+      "kind": "speech",
+      "path": "segments/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals/008_speech.wav",
+      "duration_seconds": 15.432333333333334,
+      "text": "Take one more slow, comfortable breath in, allowing the inhale to arrive in its own time. Then let the breath move out gently, without pushing. Notice whether there is even a small sense of space, steadiness, or ease in the body now.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-turbo",
+        "reference_audio": "references/meditation-male-chris_vocals.wav",
+        "reference_label": "chris_vocals",
+        "text_tokens": 52,
+        "characters": 233,
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 9,
+      "kind": "speech",
+      "path": "segments/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals/009_speech.wav",
+      "duration_seconds": 18.127291666666668,
+      "text": "You do not need to hold on to that feeling. Simply recognize that you can return to your breath, to the feeling of your feet or hands, or to the support beneath you whenever you need a moment of calm. As you begin this morning, carry that quiet steadiness with you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-turbo",
+        "reference_audio": "references/meditation-male-chris_vocals.wav",
+        "reference_label": "chris_vocals",
+        "text_tokens": 58,
+        "characters": 265,
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    },
+    {
+      "index": 10,
+      "kind": "speech",
+      "path": "segments/test-v2-chatterbox-turbo-meditation-chatterbox-turbo-chris_vocals/010_speech.wav",
+      "duration_seconds": 5.475333333333333,
+      "text": "And when you are ready, gently open your eyes and reconnect with the room around you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "chatterbox-turbo",
+        "reference_audio": "references/meditation-male-chris_vocals.wav",
+        "reference_label": "chris_vocals",
+        "text_tokens": 18,
+        "characters": 85,
+        "generation": {
+          "repetition_penalty": 1.2,
+          "min_p": 0.0,
+          "top_p": 0.95,
+          "temperature": 0.78,
+          "top_k": 1000
+        },
+        "contextual": false,
+        "post_time_stretch": 0.92
+      }
+    }
+  ]
+}

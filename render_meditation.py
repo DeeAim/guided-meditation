@@ -65,6 +65,25 @@ def safe_name(value: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "-", str(value)).strip("-") or "render"
 
 
+def reference_voice_label(reference_audio: Optional[str | Path]) -> Optional[str]:
+    """
+    Convert a Chatterbox reference filename into a compact output label.
+
+    Examples:
+      meditation-female-cori-samuel.wav -> cori-samuel
+      meditation-male-chris_vocals.wav  -> chris_vocals
+      meditation-male-clive-catterall.wav -> clive-catterall
+
+    If the filename does not have at least three hyphen-separated parts,
+    use the whole stem.
+    """
+    if not reference_audio:
+        return None
+    stem = Path(str(reference_audio)).stem
+    parts = stem.split("-")
+    return "-".join(parts[2:]) if len(parts) >= 3 else stem
+
+
 def rough_token_count(text: str) -> int:
     return len(ROUGH_TOKEN_RE.findall(text))
 
@@ -107,15 +126,141 @@ class KokoroBackend(TTSBackend):
         self.device = resolve_device(str(settings.get("device", "auto")))
         self._pipelines: dict[str, Any] = {}
 
+        # Cache custom weighted voice tensors so they are only built once
+        # per render process.
+        self._voice_blends: dict[str, Any] = {}
+
+    @staticmethod
+    def _voice_components(voice: Optional[str]) -> list[tuple[str, float]]:
+        """
+        Parse Kokoro voice specifications.
+
+        Supported:
+            af_heart
+            af_heart,af_bella
+            af_heart:8,af_bella:2
+            af_heart:0.8,af_bella:0.2
+            af_heart:70,af_bella:20,am_fenrir:10
+
+        Weights are automatically normalized, so:
+            8:2 == 80:20 == 0.8:0.2
+        """
+        if not voice:
+            raise ValueError("Kokoro requires a voice name.")
+
+        components: list[tuple[str, float]] = []
+
+        for raw_part in str(voice).split(","):
+            raw_part = raw_part.strip()
+            if not raw_part:
+                continue
+
+            if ":" in raw_part:
+                name, weight_text = raw_part.rsplit(":", 1)
+                name = name.strip()
+
+                try:
+                    weight = float(weight_text.strip())
+                except ValueError as exc:
+                    raise ValueError(
+                        f"Invalid Kokoro voice weight in '{raw_part}'. "
+                        "Example: af_heart:8,af_bella:2"
+                    ) from exc
+            else:
+                name = raw_part
+                weight = 1.0
+
+            if not name:
+                raise ValueError(f"Invalid Kokoro voice specification: '{raw_part}'")
+
+            if weight < 0:
+                raise ValueError(
+                    f"Kokoro voice weights cannot be negative: '{raw_part}'"
+                )
+
+            components.append((name, weight))
+
+        if not components:
+            raise ValueError("Kokoro requires at least one voice name.")
+
+        total_weight = sum(weight for _, weight in components)
+
+        if total_weight <= 0:
+            raise ValueError("At least one Kokoro voice weight must be greater than 0.")
+
+        # Normalize automatically.
+        return [
+            (name, weight / total_weight)
+            for name, weight in components
+        ]
+
+
+    def _voice_parts(self, voice: Optional[str]) -> list[str]:
+        return [name for name, _ in self._voice_components(voice)]
+
+
+    def _voice_mix_metadata(self, voice: Optional[str]) -> dict[str, float]:
+        return {
+            name: weight
+            for name, weight in self._voice_components(voice)
+        }
+
+
+    def _voice_pack(self, pipeline: Any, voice: Optional[str]):
+        """
+        Build the Kokoro voice tensor.
+
+        A single voice uses its original pack.
+
+        Multiple voices are combined using normalized weighted interpolation.
+        """
+        components = self._voice_components(voice)
+
+        if len(components) == 1:
+            name, _ = components[0]
+            return pipeline.load_voice(name)
+
+        # Canonical normalized cache key.
+        cache_key = ",".join(
+            f"{name}:{weight:.8f}"
+            for name, weight in components
+        )
+
+        if cache_key in self._voice_blends:
+            return self._voice_blends[cache_key]
+
+        blended = None
+
+        for name, weight in components:
+            pack = pipeline.load_voice(name)
+
+            weighted_pack = pack * weight
+
+            if blended is None:
+                blended = weighted_pack
+            else:
+                blended = blended + weighted_pack
+
+        self._voice_blends[cache_key] = blended
+        return blended
+
     def _lang_for_voice(self, voice: Optional[str]) -> str:
         if self.requested_lang_code != "auto":
             return self.requested_lang_code
-        if not voice:
-            raise ValueError("Kokoro requires a voice name.")
-        code = voice[0].lower()
-        if code not in self.supported_lang_codes:
+
+        parts = self._voice_parts(voice)
+        codes = {part[0].lower() for part in parts}
+
+        unknown = [code for code in codes if code not in self.supported_lang_codes]
+        if unknown:
             raise ValueError(f"Cannot infer Kokoro language from voice '{voice}'.")
-        return code
+
+        if len(codes) != 1:
+            raise ValueError(
+                "Kokoro blended voices must use the same language pipeline. "
+                f"Received: {', '.join(parts)}"
+            )
+        return next(iter(codes))
 
     def _pipeline(self, voice: Optional[str]):
         lang_code = self._lang_for_voice(voice)
@@ -140,9 +285,20 @@ class KokoroBackend(TTSBackend):
 
     def synthesize(self, text: str, voice: Optional[str], speed: float) -> AudioResult:
         pipeline = self._pipeline(voice)
+
+        # Build either the original single voice tensor or our custom
+        # weighted blend tensor.
+        voice_pack = self._voice_pack(pipeline, voice)
+
         parts: list[np.ndarray] = []
         counts: list[int] = []
-        for result in pipeline(text, voice=voice, speed=speed, split_pattern=None):
+
+        for result in pipeline(
+            text,
+            voice=voice_pack,
+            speed=speed,
+            split_pattern=None
+        ):
             audio = getattr(result, "audio", None)
             if audio is None:
                 try:
@@ -155,7 +311,16 @@ class KokoroBackend(TTSBackend):
             counts.append(len(getattr(result, "phonemes", "") or ""))
         if not parts:
             raise RuntimeError(f"Kokoro produced no audio for: {text!r}")
-        return AudioResult(np.concatenate(parts), self.sample_rate, {"backend": "kokoro", "kokoro_tokens": sum(counts), "contextual": False})
+        return AudioResult(
+            np.concatenate(parts),
+            self.sample_rate,
+            {
+                "backend": "kokoro",
+                "kokoro_tokens": sum(counts),
+                "contextual": False,
+                "voice_mix": self._voice_mix_metadata(voice),
+            },
+        )
 
     def _build_context(self, target: str, before: list[str], after: list[str], voice: Optional[str], cfg: dict[str, Any]) -> tuple[str, int, int]:
         target_tokens = int(cfg.get("target_tokens", 150))
@@ -247,7 +412,16 @@ class KokoroBackend(TTSBackend):
             result = self.synthesize(target, voice, speed)
             result.metadata.update({"direct_target_tokens": direct_tokens, "context_attempt_tokens": context_tokens, "context_reason": "not_enough_neighbor_context"})
             return result
-        generated = list(self._pipeline(voice)(full, voice=voice, speed=speed, split_pattern=None))
+        pipeline = self._pipeline(voice)
+        voice_pack = self._voice_pack(pipeline, voice)
+        generated = list(
+            pipeline(
+                full,
+                voice=voice_pack,
+                speed=speed,
+                split_pattern=None
+            )
+        )
         if len(generated) != 1:
             result = self.synthesize(target, voice, speed)
             result.metadata.update({"direct_target_tokens": direct_tokens, "context_attempt_tokens": context_tokens, "context_reason": "kokoro_internal_chunking"})
@@ -269,7 +443,20 @@ class ChatterboxBackend(TTSBackend):
         self.device = resolve_device(str(settings.get("device", "auto")))
         self.reference_audio = settings.get("reference_audio")
         self.generation = settings.get("generation", {}) or {}
+
+        # Conservative long-form defaults. These are intentionally below the
+        # model tokenizer's technical 1024-token limit because long Turbo
+        # generations are substantially less reliable in practice.
+        self.chunking = {
+            "enabled": True,
+            "target_tokens": 45,
+            "max_tokens": 65,
+            "max_chars": 300,
+            **(settings.get("chunking", {}) or {}),
+        }
+
         self._model = None
+        self._prepared_reference: Optional[str] = None
 
     @property
     def backend_name(self):
@@ -284,6 +471,17 @@ class ChatterboxBackend(TTSBackend):
             print(f"Loading {'Chatterbox Nano' if self.nano else 'Chatterbox Turbo'} on device='{self.device}'...")
             self._model = ChatterboxTurboTTS.from_pretrained(device=self.device, nano=self.nano)
         return self._model
+
+    def text_token_count(self, text: str) -> int:
+        """Count tokens with the exact tokenizer used by Chatterbox Turbo/Nano."""
+        model = self._load_model()
+        encoded = model.tokenizer(
+            text,
+            return_tensors="pt",
+            padding=False,
+            truncation=False,
+        )
+        return int(encoded.input_ids.shape[-1])
 
     def synthesize(self, text: str, voice: Optional[str], speed: float) -> AudioResult:
         model = self._load_model()
@@ -301,12 +499,34 @@ class ChatterboxBackend(TTSBackend):
             ref = Path(str(reference_audio))
             if not ref.exists():
                 raise FileNotFoundError(f"Reference audio not found: {ref}")
-            kwargs["audio_prompt_path"] = str(ref)
+
+            # Prepare the reference once and reuse the conditionals for every
+            # chunk. This is faster and keeps long-form rendering consistent.
+            resolved_ref = str(ref.resolve())
+            if self._prepared_reference != resolved_ref:
+                model.prepare_conditionals(str(ref))
+                self._prepared_reference = resolved_ref
+
         try:
+            # Once conditionals are prepared, generate() does not need to
+            # re-read/re-encode the reference WAV for every text chunk.
             wav = model.generate(text, **kwargs)
         except AssertionError as exc:
             raise RuntimeError("Chatterbox needs usable built-in conditionals or a >5 second reference WAV.") from exc
-        return AudioResult(to_mono_float(wav), int(model.sr), {"backend": self.backend_name, "reference_audio": str(reference_audio) if reference_audio else None, "generation": kwargs, "contextual": False})
+
+        return AudioResult(
+            to_mono_float(wav),
+            int(model.sr),
+            {
+                "backend": self.backend_name,
+                "reference_audio": str(reference_audio) if reference_audio else None,
+                "reference_label": reference_voice_label(reference_audio),
+                "text_tokens": self.text_token_count(text),
+                "characters": len(text),
+                "generation": kwargs,
+                "contextual": False,
+            },
+        )
 
 
 def build_backend(name: str, settings: dict[str, Any]) -> TTSBackend:
@@ -405,6 +625,162 @@ def optimize_prose_items(items: list[ScriptItem], target_tokens: int, max_tokens
     flush(); return out
 
 
+
+def _split_long_unit_for_chatterbox(
+    text: str,
+    count_fn,
+    max_tokens: int,
+    max_chars: int,
+) -> list[str]:
+    """
+    Split a sentence that is itself too large. Prefer clause punctuation;
+    fall back to word packing only when necessary.
+    """
+    text = text.strip()
+    if not text:
+        return []
+    if count_fn(text) <= max_tokens and len(text) <= max_chars:
+        return [text]
+
+    clauses = [
+        part.strip()
+        for part in re.split(r"(?<=[,;])\s+", text)
+        if part.strip()
+    ]
+
+    # If punctuation did not create useful clauses, fall back to words.
+    if len(clauses) <= 1:
+        words = text.split()
+        chunks: list[str] = []
+        current: list[str] = []
+        for word in words:
+            candidate = " ".join(current + [word]).strip()
+            if current and (count_fn(candidate) > max_tokens or len(candidate) > max_chars):
+                chunks.append(" ".join(current).strip())
+                current = [word]
+            else:
+                current.append(word)
+        if current:
+            chunks.append(" ".join(current).strip())
+        return chunks
+
+    chunks: list[str] = []
+    current: list[str] = []
+    for clause in clauses:
+        candidate = " ".join(current + [clause]).strip()
+        if current and (count_fn(candidate) > max_tokens or len(candidate) > max_chars):
+            chunks.append(" ".join(current).strip())
+            current = [clause]
+        else:
+            current.append(clause)
+
+    if current:
+        chunks.append(" ".join(current).strip())
+
+    # Recursively handle any unusually large remaining clause.
+    final: list[str] = []
+    for chunk in chunks:
+        if count_fn(chunk) > max_tokens or len(chunk) > max_chars:
+            final.extend(_split_long_unit_for_chatterbox(chunk, count_fn, max_tokens, max_chars))
+        else:
+            final.append(chunk)
+    return final
+
+
+def pack_chatterbox_text(
+    text: str,
+    count_fn,
+    target_tokens: int = 45,
+    max_tokens: int = 65,
+    max_chars: int = 300,
+) -> list[str]:
+    """
+    Sentence-aligned long-form chunking for Chatterbox Turbo/Nano.
+
+    The tokenizer's technical limit is much larger, but long single calls can
+    hallucinate/repeat/cut off. We therefore target short, self-contained
+    chunks and use both tokenizer tokens and a character ceiling.
+    """
+    units: list[str] = []
+    for sentence in split_sentences(text):
+        units.extend(
+            _split_long_unit_for_chatterbox(
+                sentence,
+                count_fn=count_fn,
+                max_tokens=max_tokens,
+                max_chars=max_chars,
+            )
+        )
+
+    chunks: list[str] = []
+    current: list[str] = []
+
+    for unit in units:
+        candidate = " ".join(current + [unit]).strip()
+        candidate_tokens = count_fn(candidate)
+
+        if current and (candidate_tokens > max_tokens or len(candidate) > max_chars):
+            chunks.append(" ".join(current).strip())
+            current = [unit]
+        else:
+            current.append(unit)
+
+        current_text = " ".join(current).strip()
+        if current_text and count_fn(current_text) >= target_tokens:
+            chunks.append(current_text)
+            current = []
+
+    if current:
+        chunks.append(" ".join(current).strip())
+
+    return [chunk for chunk in chunks if chunk]
+
+
+def optimize_chatterbox_items(
+    items: list[ScriptItem],
+    backend: "ChatterboxBackend",
+) -> list[ScriptItem]:
+    """
+    Re-chunk all Chatterbox speech between explicit [pause Ns] boundaries.
+
+    Exact user pauses are never removed or crossed.
+    """
+    cfg = backend.chunking
+    if not bool(cfg.get("enabled", True)):
+        return items
+
+    target_tokens = int(cfg.get("target_tokens", 45))
+    max_tokens = int(cfg.get("max_tokens", 65))
+    max_chars = int(cfg.get("max_chars", 300))
+
+    out: list[ScriptItem] = []
+    run: list[str] = []
+
+    def flush_run() -> None:
+        if not run:
+            return
+        combined = " ".join(run).strip()
+        run.clear()
+        for chunk in pack_chatterbox_text(
+            combined,
+            count_fn=backend.text_token_count,
+            target_tokens=target_tokens,
+            max_tokens=max_tokens,
+            max_chars=max_chars,
+        ):
+            out.append(ScriptItem("speech", text=chunk))
+
+    for item in items:
+        if item.kind == "speech" and item.text:
+            run.append(item.text)
+        else:
+            flush_run()
+            out.append(item)
+
+    flush_run()
+    return out
+
+
 def collect_neighbor_speech(items: list[ScriptItem], idx: int, limit: int = 8) -> tuple[list[str], list[str]]:
     before, after = [], []
     i = idx - 1
@@ -468,16 +844,37 @@ def render(script_path: Path, config_path: Path, preset_name: Optional[str], bac
     profile = script_profile_override or preset.get("script_profile") or config.get("defaults", {}).get("script_profile", "auto")
     if profile == "auto": profile = detect_script_profile(raw_items)
     if profile not in {"prose", "pause-heavy"}: raise ValueError("script profile must be auto, prose, or pause-heavy")
-    if profile == "prose":
+    if profile == "prose" and backend_name == "kokoro":
         pcfg = config.get("script_profiles", {}).get("prose", {}) or {}
-        count_fn = (lambda text: backend._token_count(text, voice)) if backend_name == "kokoro" else rough_token_count
-        items = optimize_prose_items(raw_items, int(pcfg.get("target_tokens", 150)), int(pcfg.get("max_tokens", 200)), count_fn=count_fn)
+        items = optimize_prose_items(
+            raw_items,
+            int(pcfg.get("target_tokens", 150)),
+            int(pcfg.get("max_tokens", 200)),
+            count_fn=lambda text: backend._token_count(text, voice),
+        )
     else:
         items = raw_items
 
+    # Chatterbox has a different long-form sweet spot from Kokoro. Apply
+    # Chatterbox-specific tokenizer-aware chunking regardless of script profile,
+    # while preserving every explicit [pause Ns] boundary.
+    if backend_name in {"chatterbox-nano", "chatterbox-turbo"}:
+        items = optimize_chatterbox_items(items, backend)
+
     paths = config.get("paths", {}) or {}
     segments_root, manifests_root, output_root = Path(paths.get("segments", "segments")), Path(paths.get("manifests", "manifests")), Path(paths.get("output", "output"))
-    run_slug = f"{safe_name(script_path.stem)}-{safe_name(preset['preset_name'])}-{safe_name(backend_name)}" + (f"-{safe_name(str(voice))}" if voice else "")
+    effective_reference = backend_settings.get("reference_audio")
+    if backend_name in {"chatterbox-nano", "chatterbox-turbo"} and effective_reference:
+        output_voice_label = reference_voice_label(effective_reference)
+    else:
+        output_voice_label = str(voice) if voice else None
+
+    run_slug = (
+        f"{safe_name(script_path.stem)}-"
+        f"{safe_name(preset['preset_name'])}-"
+        f"{safe_name(backend_name)}"
+        + (f"-{safe_name(output_voice_label)}" if output_voice_label else "")
+    )
     segments_dir = segments_root / run_slug
     for p in (segments_dir, manifests_root, output_root): p.mkdir(parents=True, exist_ok=True)
     output_path = output_override or output_root / f"{run_slug}.wav"
@@ -487,7 +884,22 @@ def render(script_path: Path, config_path: Path, preset_name: Optional[str], bac
     rendered: list[RenderedItem] = []
     parts: list[np.ndarray] = []
     sr: Optional[int] = None
-    print(f"Script:         {script_path}\nPreset:         {preset['preset_name']}\nBackend:        {backend_name}\nVoice:          {voice or '(backend default)'}\nSpeed:          {speed}\nScript profile: {profile}\n")
+    print(f"Script:         {script_path}")
+    print(f"Preset:         {preset['preset_name']}")
+    print(f"Backend:        {backend_name}")
+    print(f"Voice:          {voice or '(backend default)'}")
+    if effective_reference:
+        print(f"Reference:      {effective_reference}")
+        print(f"Reference label:{' ' if output_voice_label else ''}{output_voice_label or '(none)'}")
+    if backend_name in {"chatterbox-nano", "chatterbox-turbo"}:
+        print(
+            "CB chunking:    "
+            f"target={backend.chunking.get('target_tokens', 45)} tokens, "
+            f"max={backend.chunking.get('max_tokens', 65)} tokens, "
+            f"max_chars={backend.chunking.get('max_chars', 300)}"
+        )
+    print(f"Speed:          {speed}")
+    print(f"Script profile: {profile}\n")
 
     for index, item in enumerate(items, 1):
         if item.kind == "silence":
@@ -539,7 +951,7 @@ def render(script_path: Path, config_path: Path, preset_name: Optional[str], bac
         raw_out.replace(output_path)
 
     manifest = manifests_root / f"{run_slug}.json"
-    manifest.write_text(json.dumps({"version": 2, "script": str(script_path), "config": str(config_path), "preset": preset["preset_name"], "backend": backend_name, "voice": voice, "speed": speed, "script_profile": profile, "sample_rate": sr, "normalization": {"name": norm_name, "enabled": norm_enabled, **norm_cfg}, "output": str(output_path), "duration_seconds_before_final_loudnorm": len(final_audio)/sr, "items": [asdict(x) for x in rendered]}, indent=2, ensure_ascii=False), encoding="utf-8")
+    manifest.write_text(json.dumps({"version": 2, "script": str(script_path), "config": str(config_path), "preset": preset["preset_name"], "backend": backend_name, "voice": voice, "output_voice_label": output_voice_label, "reference_audio": effective_reference, "speed": speed, "script_profile": profile, "sample_rate": sr, "normalization": {"name": norm_name, "enabled": norm_enabled, **norm_cfg}, "output": str(output_path), "duration_seconds_before_final_loudnorm": len(final_audio)/sr, "items": [asdict(x) for x in rendered]}, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\nDone.\nOutput:   {output_path}\nManifest: {manifest}\nDuration before final loudnorm: {len(final_audio)/sr:.2f}s")
     return output_path
 

@@ -26,6 +26,9 @@ python render_meditation.py scripts/test.md --backend kokoro --voice am_onyx --s
 python render_meditation.py scripts/test.md --backend kokoro --voice bm_lewis --speed 0.90
 python render_meditation.py scripts/test.md --backend kokoro --voice af_bella --speed 0.90 (***)
 
+python render_meditation.py scripts/test.md --backend kokoro --voice 'af_nicole:0.4,af_bella:0.6' --speed 0.90 (****)
+python render_meditation.py scripts/test.md --backend kokoro --voice 'af_nicole:0.8,af_bella:0.2' --speed 0.90 
+python render_meditation.py scripts/test.md --backend kokoro --voice 'af_nicole:0.5,af_bella:0.5' --speed 0.90 
 
 python render_meditation.py scripts/test-v2.md --backend kokoro --voice af_nicole --speed 0.90 (*****)
 python render_meditation.py scripts/test-v2.md --backend kokoro --voice bf_isabella --speed 0.86 (**)
@@ -33,6 +36,10 @@ python render_meditation.py scripts/test-v2.md --backend kokoro --voice am_onyx 
 python render_meditation.py scripts/test-v2.md --backend kokoro --voice bm_lewis --speed 0.90
 python render_meditation.py scripts/test-v2.md --backend kokoro --voice af_sky --speed 0.88
 python render_meditation.py scripts/test-v2.md --backend kokoro --voice af_bella --speed 0.90
+
+python render_meditation.py scripts/test-v2.md --backend kokoro --voice 'af_nicole:0.4,af_bella:0.6' --speed 0.90 (****)
+python render_meditation.py scripts/test-v2.md --backend kokoro --voice 'af_nicole:0.8,af_bella:0.2' --speed 0.90 
+python render_meditation.py scripts/test-v2.md --backend kokoro --voice 'af_nicole:0.5,af_bella:0.5' --speed 0.90 
 
 #### French
 python render_meditation.py scripts/test_fr.md --backend kokoro --voice ff_siwis --speed 0.90
@@ -95,6 +102,68 @@ Script profile: pause-heavy
   scripts/test-v2.md \
   --preset meditation-warm
 
+## Testing Chatterbox nano and turbo
+### Use chatterbox-nano with meditation-male-clive-catterall.wav
+.venv-chatterbox/bin/python render_meditation.py \
+  scripts/test.md \
+  --preset chatterbox-nano-meditation \
+  --reference-audio references/meditation-male-clive-catterall.wav
+
+### Use chatterbox-turbo with meditation-male-clive-catterall.wav (*****)
+.venv-chatterbox/bin/python render_meditation.py \
+  scripts/test.md \
+  --preset chatterbox-turbo-meditation \
+  --reference-audio references/meditation-male-clive-catterall.wav
+
+### Use chatterbox-nano with meditation-female-cori-samuel.wav
+.venv-chatterbox/bin/python render_meditation.py \
+  scripts/test.md \
+  --preset chatterbox-nano-meditation \
+  --reference-audio references/meditation-female-cori-samuel.wav
+
+### Use chatterbox-turbo with meditation-female-cori-samuel.wav
+.venv-chatterbox/bin/python render_meditation.py \
+  scripts/test.md \
+  --preset chatterbox-turbo-meditation \
+  --reference-audio references/meditation-female-cori-samuel.wav
+
+### meditation-male-chris_vocals.wav (*****)
+.venv-chatterbox/bin/python render_meditation.py \
+  scripts/test.md \
+  --preset chatterbox-turbo-meditation \
+  --reference-audio references/meditation-male-chris_vocals.wav
+
+### Use chatterbox-turbo with meditation-male-keep-going_insta.wav
+.venv-chatterbox/bin/python render_meditation.py \
+  scripts/test.md \
+  --preset chatterbox-turbo-meditation \
+  --reference-audio references/meditation-male-keep-going_insta.wav
+
+## Shortlisted voice with Chatterbox
+### Use chatterbox-turbo with meditation-male-clive-catterall.wav (*****)
+.venv-chatterbox/bin/python render_meditation.py \
+  scripts/test.md \
+  --preset chatterbox-turbo-meditation \
+  --reference-audio references/meditation-male-clive-catterall.wav
+
+.venv-chatterbox/bin/python render_meditation.py \
+  scripts/test-v2.md \
+  --preset chatterbox-turbo-meditation \
+  --reference-audio references/meditation-male-clive-catterall.wav
+
+### meditation-male-chris_vocals.wav (*****)
+.venv-chatterbox/bin/python render_meditation.py \
+  scripts/test.md \
+  --preset chatterbox-turbo-meditation \
+  --reference-audio references/meditation-male-chris_vocals.wav
+
+.venv-chatterbox/bin/python render_meditation.py \
+  scripts/test-v2.md \
+  --preset chatterbox-turbo-meditation \
+  --reference-audio references/meditation-male-chris_vocals.wav
+
+
+
 # 2 `🧘 Meditation Voiceover` Mode commands examples
 
 "Render scripts/morning.md using meditation-warm"
@@ -109,7 +178,37 @@ Script profile: pause-heavy
 
 "Render this pause-heavy script"
 
-# 2. Meditation voice for kokoro-82M
+"Render scripts/test.md using meditation-warm-british and compare it with meditation-warm."
+
+"Render scripts/test.md using Chatterbox Nano. 
+Use the reference voice in references/meditation-speaker.wav."
+
+## Review render_meditation.py with `🧘 Meditation Voiceover` Mode
+```
+Inspect @/config/voice.yaml and @/render_meditation.py.
+
+Verify that this project is correctly configured for the
+Meditation Voiceover V2 workflow.
+
+Do not modify anything yet.
+
+Check:
+- Kokoro environment
+- Chatterbox environment
+- FFmpeg
+- espeak-ng
+- available presets
+- scripts/test.md
+- output/manifests/segments directories
+
+Then tell me whether the project is ready to render using:
+1. meditation-warm
+2. meditation-warm-british
+3. chatterbox-nano-meditation
+4. chatterbox-turbo-meditation
+```
+
+# 3. Meditation voice for kokoro-82M
 
 https://voicerankings.com/voice/kokoro-82M/female
 https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md

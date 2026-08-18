@@ -1,0 +1,246 @@
+{
+  "version": 2,
+  "script": "scripts/test-v2.md",
+  "config": "config/voice.yaml",
+  "preset": "meditation-warm",
+  "backend": "kokoro",
+  "voice": "af_nicole:0.8,af_bella:0.2",
+  "output_voice_label": "af_nicole:0.8,af_bella:0.2",
+  "reference_audio": null,
+  "speed": 0.9,
+  "script_profile": "prose",
+  "sample_rate": 24000,
+  "normalization": {
+    "name": "voiceover",
+    "enabled": true,
+    "target_lufs": -19.0,
+    "true_peak_db": -1.5,
+    "lra": 11.0
+  },
+  "output": "output/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2.wav",
+  "duration_seconds_before_final_loudnorm": 180.825,
+  "items": [
+    {
+      "index": 1,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/001_speech.wav",
+      "duration_seconds": 19.675,
+      "text": "Allow your eyes to gently close, if that feels comfortable. Take a slow, easy breath in, and let the breath leave without effort. Feel the weight of your body settling naturally into the surface beneath you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 198,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 2,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/002_speech.wav",
+      "duration_seconds": 15.375,
+      "text": "There is nothing you need to hold up right now, and nowhere else you need to be. Let your shoulders soften. Allow your jaw to relax, and let your hands rest comfortably.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 170,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 3,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/003_speech.wav",
+      "duration_seconds": 10.325,
+      "text": "For a few moments, simply notice the quiet rhythm of breathing. You do not need to make the breath deeper or slower.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 118,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 4,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/004_speech.wav",
+      "duration_seconds": 9.4,
+      "text": "Just notice the breath arriving, and notice the breath leaving, one gentle cycle at a time.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 89,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 5,
+      "kind": "silence",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/005_pause_7s.wav",
+      "duration_seconds": 7.0,
+      "text": null,
+      "requested_pause_seconds": 7.0,
+      "metadata": null
+    },
+    {
+      "index": 6,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/006_speech.wav",
+      "duration_seconds": 15.55,
+      "text": "Now bring a little more attention to the places where your body is supported. Notice the steady contact beneath you, and allow yourself to receive that support.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 154,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 7,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/007_speech.wav",
+      "duration_seconds": 14.7,
+      "text": "As you breathe out, imagine releasing any unnecessary effort from the face, the neck, the shoulders, and the hands. Sounds may come and go around you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 146,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 8,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/008_speech.wav",
+      "duration_seconds": 9.75,
+      "text": "There is no need to block them out, and no need to follow them. Let each sound be part of the background.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 105,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 9,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/009_speech.wav",
+      "duration_seconds": 16.2,
+      "text": "If thoughts appear, notice that they are here, then gently return your attention to the simple physical feeling of your body resting and to the natural movement of your breath.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 166,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 10,
+      "kind": "silence",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/010_pause_8s.wav",
+      "duration_seconds": 8.0,
+      "text": null,
+      "requested_pause_seconds": 8.0,
+      "metadata": null
+    },
+    {
+      "index": 11,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/011_speech.wav",
+      "duration_seconds": 14.5,
+      "text": "Take one more slow, comfortable breath in, allowing the inhale to arrive in its own time. Then let the breath move out gently, without pushing.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 139,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 12,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/012_speech.wav",
+      "duration_seconds": 12.55,
+      "text": "Notice whether there is even a small sense of space, steadiness, or ease in the body now. You do not need to hold on to that feeling.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 132,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 13,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/013_speech.wav",
+      "duration_seconds": 14.7,
+      "text": "Simply recognize that you can return to your breath, to the feeling of your feet or hands, or to the support beneath you whenever you need a moment of calm.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 150,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    },
+    {
+      "index": 14,
+      "kind": "speech",
+      "path": "segments/test-v2-meditation-warm-kokoro-af_nicole-0.8-af_bella-0.2/014_speech.wav",
+      "duration_seconds": 13.1,
+      "text": "As you begin this morning, carry that quiet steadiness with you. And when you are ready, gently open your eyes and reconnect with the room around you.",
+      "requested_pause_seconds": null,
+      "metadata": {
+        "backend": "kokoro",
+        "kokoro_tokens": 145,
+        "contextual": false,
+        "voice_mix": {
+          "af_nicole": 0.8,
+          "af_bella": 0.2
+        }
+      }
+    }
+  ]
+}
